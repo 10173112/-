@@ -1,27 +1,27 @@
 ## Git1.免費、開源專案管理工具2.記錄版本更動情形3.分散式系統4.可離線工作5.多人合作專案時7
 ##  Linux1.作業系統之一2.提供所有最基本的功能，像是鍵盤輸入、螢幕輸出，記憶體管理3.相對比較不耗資源的系統，常用來處理巨量資料4.雲端部署時常使用8
 
-##Linux背景知識-壓縮檔案為什麼要壓縮檔案呢？
+## Linux背景知識-壓縮檔案為什麼要壓縮檔案呢？
 1.備份資料的時候，方便整理。2.將檔案變小，節省電腦硬碟的空間。(但圖片、音訊、視訊等多媒體檔案壓縮率低，並不能有效節省空間)
 3.將無數個散亂的檔案打包成一個較小的檔案，亦方便資訊在網路上流通。(可將永久免費版之付費軟體輕鬆分享)4.壓縮檔案時，可以視情況進行加密。
-##Linux背景知識-
+## Linux背景知識-
 各壓縮的差別4●考慮的因素○壓縮率（compression ratio），能夠將檔案壓到多小。○解壓縮所需的時間，也就是需要的 CPU 計算量。○解壓縮所需的記憶體空間。○相容性（compatibility），即解壓縮程式的普遍性，是不是大部分人都有辦法解壓縮這種格式？
-##Linux背景知識-
+## Linux背景知識-
 各壓縮的差別●需要在記憶體很小的機器（如小於 128MB）上解壓縮時，則選擇 gzip 格式。●需要在很簡單、沒有什麼工具可用的機器解壓縮時，則選擇 gzip 格式。●需要節省網路頻寬、縮短下載所需要的時間時，則選擇 xz 格式。●需要有最好的壓縮率時，則選擇 tar.xz 格式。
-##Linux指令-壓縮檔案●gzip○壓縮：gzip FileName○解壓縮：■gunzip FileName.gz■gzip -d FileName.gz8
-##Linux指令-壓縮檔案●xz○壓縮：xz -z FileName○解壓縮：xz -d FileName.xz●tar.gz○壓縮：tar -zcvf FileName.tar.gz DirName○解壓縮：tar -zxvf FileName.tar.gz
-##Linux指令-檔案搜尋●find [path] [option] [action] filename○option■-size EX：找出大於500M的檔案→ -size +500M■-name EX：找出為照片的檔案→ -name "*.jpg"■-type EX：-type f→ 一般檔案;  -type d→ 一般目錄■-user EX：同時找兩個擁有者的檔案→-user user1 -o -user user2○action -exec■ls■print10
-##Linux指令-檔案搜尋●which filename○-a：系統會顯示所有被找到的命令執行檔之完整路徑○-n<文件名長度>指定文件名長度，指定的長度 必須大於 或等於所有文件中最長的文件名。○-p<文件名長度>與-n参數相同，但此處的<文件名長度>包括了文件的路 徑。○-w：指定輸出 欄位的寬度。○-V：顯示 版本訊 息
-##Linux指令-檔案內容查閱●cat從第一行  顯示檔案內容、形成新檔案○cat -n file1 > file2→把file1的檔案內容加上行號後 輸入file2檔案■-n  → 由1開始對  所有輸出的行數編號■>    → 將多個文件覆蓋 到目 標文件中■>>  → 將多個文件追加到目 標文件中，不覆蓋●tac從最後一行開始顯示○tac -r -s 'x\|[^x] ' test.log→一個 接著一個字符的反轉一個文件■-r→將分 隔符作為基  礎正規表達是處理■-s→使用String作為分隔符代替默認的換行符12
-##Linux指令-檔案內容查閱●more一頁一頁的顯示 檔案內容○more +20 testfile→從第20行開始顯示testfile的文檔內容■EN TER：向下n行(default為1行)■Ctrl+F   /S PACE：向下滾動一屏■Ctrl+B：返回 上一 屏●less與more 類似 ，顯示 檔案 室允許  用戶既可以 向前又可以 向後翻頁   閱讀檔案○ps -ef    |less→ps查看進程 信息並通過less分頁顯示■j→下一行■k→上一行■G→移動 到最 後一行■g→移動 到第一行13
-##Linux指令-檔案內容查閱●head 取出前面幾行(預設10行)○-n：後面接數字，代表幾行的意思●tail 取出後面幾行(預設10行)○-n：後面接數字，代表幾行的意思○-n +20：只想列出20行以後的資料
-##Linux背景知識-資料傳輸溝通案例：小美開瀏覽器(客戶端)並輸入Youtube首頁網址(伺服器端)1.瀏覽器(客戶端)向YouTube的遠端主機(伺服器端)發出一個請求2.該請求透過網路被傳遞到YouTube首頁的位址3.位於YouTube首頁的遠端主機(伺服器端)收到一個請求4.遠端主機(伺服器端)會根據請求內容，找到一個對應的網路資源5.取出對應的網路資源，伺服器將其回傳至小美的瀏覽器6.瀏覽器(客戶端)收到回傳內容，開始解析資源，顯示於瀏覽器上19
+## Linux指令-壓縮檔案●gzip○壓縮：gzip FileName○解壓縮：■gunzip FileName.gz■gzip -d FileName.gz8
+## Linux指令-壓縮檔案●xz○壓縮：xz -z FileName○解壓縮：xz -d FileName.xz●tar.gz○壓縮：tar -zcvf FileName.tar.gz DirName○解壓縮：tar -zxvf FileName.tar.gz
+## Linux指令-檔案搜尋●find [path] [option] [action] filename○option■-size EX：找出大於500M的檔案→ -size +500M■-name EX：找出為照片的檔案→ -name "*.jpg"■-type EX：-type f→ 一般檔案;  -type d→ 一般目錄■-user EX：同時找兩個擁有者的檔案→-user user1 -o -user user2○action -exec■ls■print10
+## Linux指令-檔案搜尋●which filename○-a：系統會顯示所有被找到的命令執行檔之完整路徑○-n<文件名長度>指定文件名長度，指定的長度 必須大於 或等於所有文件中最長的文件名。○-p<文件名長度>與-n参數相同，但此處的<文件名長度>包括了文件的路 徑。○-w：指定輸出 欄位的寬度。○-V：顯示 版本訊 息
+## Linux指令-檔案內容查閱●cat從第一行  顯示檔案內容、形成新檔案○cat -n file1 > file2→把file1的檔案內容加上行號後 輸入file2檔案■-n  → 由1開始對  所有輸出的行數編號■>    → 將多個文件覆蓋 到目 標文件中■>>  → 將多個文件追加到目 標文件中，不覆蓋●tac從最後一行開始顯示○tac -r -s 'x\|[^x] ' test.log→一個 接著一個字符的反轉一個文件■-r→將分 隔符作為基  礎正規表達是處理■-s→使用String作為分隔符代替默認的換行符12
+## Linux指令-檔案內容查閱●more一頁一頁的顯示 檔案內容○more +20 testfile→從第20行開始顯示testfile的文檔內容■EN TER：向下n行(default為1行)■Ctrl+F   /S PACE：向下滾動一屏■Ctrl+B：返回 上一 屏●less與more 類似 ，顯示 檔案 室允許  用戶既可以 向前又可以 向後翻頁   閱讀檔案○ps -ef    |less→ps查看進程 信息並通過less分頁顯示■j→下一行■k→上一行■G→移動 到最 後一行■g→移動 到第一行13
+## Linux指令-檔案內容查閱●head 取出前面幾行(預設10行)○-n：後面接數字，代表幾行的意思●tail 取出後面幾行(預設10行)○-n：後面接數字，代表幾行的意思○-n +20：只想列出20行以後的資料
+## Linux背景知識-資料傳輸溝通案例：小美開瀏覽器(客戶端)並輸入Youtube首頁網址(伺服器端)1.瀏覽器(客戶端)向YouTube的遠端主機(伺服器端)發出一個請求2.該請求透過網路被傳遞到YouTube首頁的位址3.位於YouTube首頁的遠端主機(伺服器端)收到一個請求4.遠端主機(伺服器端)會根據請求內容，找到一個對應的網路資源5.取出對應的網路資源，伺服器將其回傳至小美的瀏覽器6.瀏覽器(客戶端)收到回傳內容，開始解析資源，顯示於瀏覽器上19
 通訊 埠號 是 TCP /UDP 與上層通訊的通道，當TCP /UDP 要傳 送訊息時， 會指定要由哪 一個通訊埠號來接收。一 些常 用的 服務會使用特定 的埠號來  等待要求的訊 息。埠號 是由16個位元所組成的 號碼，0 ~ 255 為保留號碼，25 6~65535 則可自行設定。 
 TCP /I P提供了點對點的連結機制，將資料應該如何封裝、定址、傳輸、路由以及在目的地如何接收，都加以標準化。它將軟體通信過程抽象化為四個抽象層，採取協議堆疊的方式，分別實作出不同通信協定。協定套組下的各種協議，依其功能不同，被分別歸屬到這四個階層之中，常被視為是簡化的七層OSI模型。
 1.TCP三向交握在瀏覽器送出請求之後，瀏覽器和伺服器就會開始初步溝通，確定雙方的溝通管道順暢，以便後續請求的執行2.瀏覽器請求、資料傳輸、渲染畫面如同前面所提，當三項交握結束後，瀏覽器和伺服器便會開始執行請求、資料傳輸與渲染畫面的過程3.TCP四次揮手，結束連線在網頁成功渲染之後，瀏覽器就會和伺服器進行最後的溝通，確認傳輸過程已完成，準備結束連線
-##Linux指令-網路相關●route●netstat -r(mac)25➔Destination, Genmask：完整的網域➔Gateway：這個網域是從哪個Gateway連接出去的，0.0.0.0表示這個路由是從本機傳送，有IP的話，代表需要經過路由器才能傳出去➔Iface：網路卡介面
-##Linux指令-網路相關26add  :新增一條路由規 則del  :刪除一條路由規 則-net  :目的 地址 是一個網路-host  :目的地址 是一個 主機target  :目的網路或主機netmas k:目的地址的網路  掩碼gw  :路由資料包通過的閘道 器dev  :為路由指定的網路介面
+## Linux指令-網路相關●route●netstat -r(mac)25➔Destination, Genmask：完整的網域➔Gateway：這個網域是從哪個Gateway連接出去的，0.0.0.0表示這個路由是從本機傳送，有IP的話，代表需要經過路由器才能傳出去➔Iface：網路卡介面
+## Linux指令-網路相關26add  :新增一條路由規 則del  :刪除一條路由規 則-net  :目的 地址 是一個網路-host  :目的地址 是一個 主機target  :目的網路或主機netmas k:目的地址的網路  掩碼gw  :路由資料包通過的閘道 器dev  :為路由指定的網路介面
 常用網路  檢測 工具，可  藉由發送  ICMP ECH   O_RE QUEST封包，檢查自己與特定設備之間的網路是   否暢 通，並同時測量網路連線 的來回通訊延遲 時間（round-trip delay time）。●-n：參數指 定封 包數→EX：ping -n 10 blog.gtwang.org●-t：持續監看  網路是否正常  →EX：ping -t blog.gtwang.org●-4 /-6：IPv4 /IPv6●-c：指定Ping次數→EX：ping -c 4 blog.gtwang.org●-s：指定發送 的數據字結 數→EX：ping -s 1024 facebook.com●-i：指定收發 資訊間隔時間→EX：ping -i 0.4 facebook.com●
 影響網路速度的因素：●延遲 （Latency）： 封包從來源端至目的 端中間所  花的時間●頻寬（Bandwidth）：傳輸媒介的最大吞吐 量網路延遲（Latency）的組成元素:●propagation delay：封包在網路線上傳輸所花費的時間，與網路 線上電 子訊號跑 的速度有關，這個時間就是距離除以訊號傳送速 度所得到的數 值。●transmission delay：網路  卡將資料傳送到網路 線上所 花的時間，與網路 設備的傳  送速 度有關。●nodal processing delay：路 由器處理封包表頭、檢查位元 資料 錯誤 與尋找 配送路徑等所花費的時間。●queuing delay：路由器因為  某些因素無法立刻 將封包傳送到網路上，造成封包暫存在佇列 中等待的時間。29
-##Linux介紹指令及實做-網路相關32●netstat●查看端口是否被占用：netstat -al grep 3306●查看數據包統計信息：netstat -s●查看路由信息：netstat -r
-##Thanks for your listening !38
+## Linux介紹指令及實做-網路相關32●netstat●查看端口是否被占用：netstat -al grep 3306●查看數據包統計信息：netstat -s●查看路由信息：netstat -r
+## Thanks for your listening !38
